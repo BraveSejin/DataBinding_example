@@ -2,6 +2,7 @@ package com.bravesejin.databindingexample;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         //xml의 activity 변수를 이 액티비티로 하겠다는 말. 즉, activity 변수는 함수나 변수를 참조할 수 있다.
         //setActivity() 함수는 xml에 activity라는 변수를 만들었기 때문에 자동생성.
         binding.setActivity(this);
+        binding.rcContent.setAdapter(new UserAdapter());
+        binding.rcContent.setLayoutManager(new LinearLayoutManager(this));
 
     }
     //클릭이벤트 콜백은 xml에 등록한다.
