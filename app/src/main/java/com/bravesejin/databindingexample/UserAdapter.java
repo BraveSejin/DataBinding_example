@@ -7,15 +7,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import java.util.ArrayList;
+
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     private ArrayList<User> users;
     public UserAdapter() {
         users = new ArrayList<User>();
-        users.add(new User("세진","",24));
-        users.add(new User("세진","",24));
-        users.add(new User("세진","",24));
+        users.add(new User("세진","https://ppss.kr/wp-content/uploads/2020/07/1-97.jpg",24));
+        users.add(new User("세진","https://ppss.kr/wp-content/uploads/2020/07/1-97.jpg",24));
+        users.add(new User("세진","https://ppss.kr/wp-content/uploads/2020/07/1-97.jpg",24));
     }
 
     @NonNull
