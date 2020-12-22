@@ -1,14 +1,30 @@
 package com.bravesejin.databindingexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.bravesejin.databindingexample.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
+    //xml파일 이름 기준으로 클래스 생성된 것.
 
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+//        이렇게.
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
+        binding.setActivity(this);
+
+    }
+    //클릭이벤트 콜백은 xml에 등록한다.
+    public void onBtnClick(View view){
+        Toast.makeText(this, "ButtonClick",Toast.LENGTH_LONG).show();
     }
 }
